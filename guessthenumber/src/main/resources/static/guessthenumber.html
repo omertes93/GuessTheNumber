@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html lang="he" class="no-js">
+
+<script src="guessthenumber.js"></script>
+<link href="guessthenumber.css" rel="stylesheet">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Guess the number</title>
+
+</head>
+
+<body onload="hide(guessDiv);hide(divClear);">
+
+	<div class="wrapper">
+		<div class="table-title">
+			<h1>Guess the number</h1>
+		</div>
+
+		<div class="name_bx clr">
+			Name: <input type="text" id="txtfullname" value=""
+				onkeypress="javascript:return isOnlyChars(event)">
+			<button type="button" id="btnStartNewGame"
+				onclick="requestExe(this.id)">Start a New Game</button>
+		</div>
+		<div>
+			<div class="name_bx clr">
+				<label id="msg">
+					<h2>Please enter your name</h2>
+				</label>
+			</div>
+
+			<div class="check_bx clr" id="guessDiv">
+				<div class="name_bx clr">
+					Digits in place <img src=images/digitsInPlace.png><br>
+					Digits not in place <img src=images/digitsNotInPlace.png>
+				</div>
+				<input type="text" id="txtNumber" value=""
+					onkeypress="javascript:return isNumber(event)">
+				<button type="button" id="btnCheck" class="check_btn"
+					onclick="requestExe(this.id)">Check</button>
+				<div class="clr"></div>
+			</div>
+		</div>
+		<div class="buttons_bx" id="divClear">
+			<div>
+				<button type="button" id="btnClear" class="order_btn"
+					onclick="resetGameBoard()">Clear game board</button>
+
+			</div>
+			<div>
+				<button type="button" id="btnClearTopScoreTable" class="order_btn"
+					onclick="requestExe(this.id)">Clear top score table</button>
+			</div>
+		</div>
+		<!--**************RESULTS TABLE-->
+		<div id="divResultsTable"></div>
+		<!--**************HIGH SCORES TABLE-->
+		<div id="divHighScoresTable"></div>
+
+	</div>
+</body>
+</html>
